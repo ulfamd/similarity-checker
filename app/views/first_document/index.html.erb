@@ -1,0 +1,31 @@
+<table border="1">
+	<thead>
+		<tr>
+			<th>
+				kata dasar
+			</th>
+			<th>
+				bobot
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @first_document.each do |d| %>
+			<tr>
+				<td>
+					<%= d.base_word %>
+				</td>
+				<td>
+					<%= d.value_word %>
+				</td>
+					
+				
+
+			</tr>
+			
+		<% end %>
+
+	</tbody>
+
+
+</table>

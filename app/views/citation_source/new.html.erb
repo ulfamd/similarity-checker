@@ -1,0 +1,54 @@
+<%= form_tag(new_citation_source_path, method: "post") do %>
+<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+            	 <div class="card">
+	                <div class="card-header card-header-primary">
+	                  <h4 class="card-title">Masukkan Data Sumber Kutipan</h4>
+	                  <p class="card-category">Isi Form Berikut</p>
+	                </div>
+	                <div class="card-body">
+	                	<form>
+                    <div class="row-md-3">
+                      <div class="col-lg-3">
+                        <div class="form-group bmd-form-group">
+	<div>
+        <%= label_tag :source_id, "ID Sumber Kutipan" %>
+		<%= text_field_tag :source_id %>
+	</div>
+	<div>
+		<%= label_tag :citation_source_writer_name, "Nama Penulis Sumber Kutipan" %>
+		<%= text_field_tag :citation_writer_name %>
+	</div>
+	<div>
+		<%= label_tag :citation_source_year, "Tahun Terbit Sumber Kutipan" %>
+		<%= text_field_tag :citation_source_year %>
+	</div>
+	<div>
+		<%= label_tag :citation_source_title, "Judul Dokumen Sumber Kutipan" %>
+		<%= text_field_tag :citation_source_title %>
+	</div>
+	<div>
+		<%= label_tag :citation_source_publisher, "Penerbit Sumber Kutipan " %>
+		<%= text_field_tag :citation_source_publisher %>
+	</div>
+	<div>
+		<%= label_tag :citation_source_sentence, "Kalimat Sumber Kutipan" %>
+		<%= text_field_tag :citation_source_sentence %>
+	</div>
+	<div>
+		<%= submit_tag %>
+	</div>
+				<div>
+					<form>
+                    <div class="row-md-3">
+                      <div class="col-md-5">
+                        <div class="form-group bmd-form-group">
+					<%= submit_tag %>
+				</div>
+	</div>
+		</div>
+			</div>
+		</div>
+<% end %>

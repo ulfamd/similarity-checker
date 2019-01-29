@@ -1,0 +1,2 @@
+class CitationSource < ApplicationRecord
+end

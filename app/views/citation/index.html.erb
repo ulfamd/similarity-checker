@@ -1,0 +1,40 @@
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Tabel Kutipan</h4>
+                  <p class="card-category"> Ini adalah data tabel kutipan</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      
+
+	<tr>
+		<td>id Kutipan</td>
+		<td>Nama Penulis Kutipan</td>
+		<td>Tahun Terbit Kutipan</td>
+		<td>Judul Dokumen Kutipan</td>
+		<td>Penerbit Kutipan</td>
+		<td>Kalimat Kutipan</td>
+	</tr>
+	<% @citation.each do |c|%>
+	<tr>
+		<td> <%= c.citation_id %> </td>
+		<td> <%= c.citation_writer__name%> </td>
+		<td> <%= c.citation_year%> </td>
+		<td> <%= c.citation_title%> </td>
+		<td> <%= c.citation_publisher %> </td>
+		<td> <%= c.citation_sentence %> </td>
+	<% end %>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+</table>

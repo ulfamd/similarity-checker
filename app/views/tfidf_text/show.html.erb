@@ -1,0 +1,24 @@
+<%= render 'navigation' %>
+
+<div class="container">
+  <div class="row">
+    <%= form_for(@tfidf_text) do |tf| %>
+
+        <div class="form-group">
+          <%= tf.label :user_id %>
+          <%= tf.text_field :user_id, class:'form-control', type: 'text', placeholder: 'ID User', disabled: true %>
+        </div>
+
+        <div class="form-group">
+          <%= tf.label :text_1 %>
+          <%= tf.text_field :text_1, class:'form-control', type: 'text', placeholder: 'Teks 1', disabled: true %>
+        </div>
+
+        <div class="form-group">
+          <%= tf.label :text_2 %>
+          <%= tf.text_field :text_2, class:'form-control', type: 'text', placeholder: 'Teks 2', disabled: true %>
+        </div>
+
+    <% end %>
+  </div>
+</div>

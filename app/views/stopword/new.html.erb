@@ -1,0 +1,11 @@
+<%= form_tag(stopword_index_path, method: "post") do %>
+ <%= label_tag(:words, "masukkan kutipan") %>
+  <%= text_area_tag(:words) %>
+
+ <% end %>
+<%= form_tag(stopword_index_path, method: "post") do %>
+ <%= label_tag(:words, "masukkan sumber kutipan") %>
+  <%= text_area_tag(:words) %>
+
+<% end %>
+  <%= submit_tag("save") %>

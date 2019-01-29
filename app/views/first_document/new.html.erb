@@ -1,0 +1,15 @@
+<%= form_tag(first_document_index_path, method: "post") do %>
+  <%= label_tag(:base_word, "kata dasar") %>
+  <%= text_field_tag(:base_word) %>
+  <%= label_tag(:value_word, "bobot") %>
+  <%= text_field_tag(:value_word) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= form_tag(second_document_index_path, method: "post") do %>
+  <%= label_tag(:base_word, "kata dasar") %>
+  <%= text_field_tag(:base_word) %>
+  <%= label_tag(:value_word, "bobot") %>
+  <%= text_field_tag(:value_word) %>
+  <%= submit_tag("Search") %>
+<% end %>

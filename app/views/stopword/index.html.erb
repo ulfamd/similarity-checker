@@ -1,0 +1,12 @@
+<h1>Stopword#index</h1>
+<p>Find me in app/views/stopword/index.html.erb</p>
+<table border="3">
+	<tr>
+		<td>kata</td>
+	</tr>
+	<% @stopword.each do |sw|%>
+	<tr>
+		<td> <%= sw.words %> </td>
+	<% end %>
+	</tr>
+</table>

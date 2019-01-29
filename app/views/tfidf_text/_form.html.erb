@@ -1,0 +1,31 @@
+<div class="content">
+          <div class="row">
+            <div class="col-md-10">
+               <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title">Cek Teks</h4>
+                    <p class="card-category">Masukkan Teks</p>
+                  </div>
+                  <div class="card-body">
+                    
+                    <div class="row-md-3">
+                      <div class="col-lg-10">
+                        <div class="form-group bmd-form-group">
+                          <div class="container">
+  <div class="row">
+    <%= form_for @tfidf_text do |tf| %>
+
+        <div class="form-group">
+          <%= tf.label :Teks_kutipan %>
+          <%= tf.text_area :text_1, class:'form-control', type: 'text', placeholder: '' %>
+        </div>
+
+        <div class="form-group">
+          <%= tf.label :teks_sumber_kutipan %>
+          <%= tf.text_area :text_2, class:'form-control', type: 'text', placeholder: '' %>
+        </div>
+
+        <%= tf.submit :Save, class: 'btn btn-success' %>
+
+    <% end %>
+  </div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source_id: 1
+  citation_source_writer_name: MyString
+  citation_source_year: 1
+  citation_source_title: MyString
+  citation_source_publisher: MyString
+  citation_source_sentence: MyText
+
+two:
+  source_id: 1
+  citation_source_writer_name: MyString
+  citation_source_year: 1
+  citation_source_title: MyString
+  citation_source_publisher: MyString
+  citation_source_sentence: MyText

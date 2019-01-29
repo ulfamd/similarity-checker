@@ -1,0 +1,6 @@
+<%= @similarity %>
+<% tfidf_by_term = {}
+@text_1.terms.each do |term|
+  tfidf_by_term[term] = @model.tfidf(@text_1, term)
+end %>
+<p><%= tfidf_by_term.sort_by{|_,tfidf| -tfidf}  %></p>

@@ -1,0 +1,123 @@
+<div class="content">
+        <div class="container-fluid">
+          <div class="row-md-10">
+            <div class="col-md-20">
+               <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title">Cek Teks</h4>
+                    <p class="card-category">Masukkan Teks</p>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                    <div class="row-md-10">
+                      <div class="col-lg-20">
+                        <div class="form-group bmd-form-group">
+                          <div class="container">  
+                            <h4>1. Original Text</h4>
+                              <p>
+                                <strong>Text 1 :</strong>
+                                <%= @tfidf_text.text_1 %>
+                              </p>
+                             
+                              <p>
+                                <strong>Text 2 :</strong>
+                                <%= @tfidf_text.text_2 %>
+                              </p>
+
+                            <h4>2. Case Folding</h4>
+                              <p>
+                                <strong>Text 1 :</strong>
+                                <%= @tfidf_text.text_1.downcase.gsub(/[^a-z ]/, '') %>
+                                <% @tfidf_text.text_1.downcase.gsub ",", '' %>
+                              </p>
+                             
+                              <p>
+                                <strong>Text 2 :</strong>
+                                <%= @tfidf_text.text_2.downcase.gsub(/[^a-z ]/, '') %>
+                                <% @tfidf_text.text_2.downcase.gsub ",",'' %>
+
+                            <h4>3. Tokenizing </h4>
+                              <p>
+                                <table class="table">
+                                  <td>Teks 1</td>
+                                  <% @tfidf_text.text_1.downcase.split(/\W+/).each do |c| %>
+                                  <td> <%= c %> </td> 
+                                  <% end %>
+                                <tr>
+                                  <td>Teks 2</td>    
+                                  <% @tfidf_text.text_2.downcase.split(/\W+/).each do |d| %>
+                                  <td> <%= d %> </td>
+                                  <% end %>
+                                </table>  
+                              </p>
+
+                            <h4>4. Filtering </h4>
+                              <p>
+                                <table class="table">
+                                  <td>Teks 1</td>
+                                  <td> <% @tfidf_text.text_1.downcase.split(/\W+/).select {|k, v|  !Stopword.all.pluck(:word).include? k}.each do |c|%> </td>
+                                  <td> <%= c %> 
+                                  <% end %>
+                                  <tr>
+                                  <td>Teks 2</td>    
+                                  <% @tfidf_text.text_2.downcase.split(/\W+/).select {|k, v|  !Stopword.all.pluck(:word).include? k }.each do |d| %>
+                                  <td> <%= d %> </td>
+                                  <% end %>
+                                </table>
+                              </p>
+
+                            <h4>5. Stemming </h4>
+                              <p>
+                                <table class = "table">
+                                  <td>Text 1 </td>
+                                  <td> <% @tfidf_text.text_1.downcase.split(/\W+/).select {|k, v|  !Stopword.all.pluck(:word).include? k}.each do |c|%> </td>
+                                    <% ::IndonesianStemmer.stem(c)  %>
+                                  <td> <%= c %> </td>
+                                <% end %>
+                                <tr>
+                                  <td> Teks 2 </td>
+                                  <% @tfidf_text.text_2.downcase.split(/\W+/).select {|k, v|  !Stopword.all.pluck(:word).include? k }.each do |d| %>
+                                  <% ::IndonesianStemmer.stem(d)  %>
+                                  <td> <%= d %> </td>
+                                  <% end %>
+                              </tr>
+                            </table>
+                              </p>
+                             
+
+                            <h4> TF-IDF Similarity </h4>
+                                <% @matrix %>
+                                <%= @similarity %>
+                                <% tfidf_by_term = {}
+                                @text_1.terms.each do |term|
+                                tfidf_by_term[term] = @model.tfidf(@text_1, term)
+                                end %>
+                                <p><%= tfidf_by_term.sort_by{|_,tfidf| -tfidf}  %></p>
+                                <% tfidf_by_term = {}
+                                @text_2.terms.each do |term|
+                                tfidf_by_term[term] = @model.tfidf(@text_2, term)
+                                end %>
+                                <p><%= tfidf_by_term.sort_by{|_,tfidf| -tfidf}  %></p>
+
+
+                              <%if @similarity <= 0.3 %>
+                                <%= "Tidak Similar" %>
+                                <%elsif (@similarity > 0.3) && (@similarity <= 0.6) %>
+                                <%= "Mendekati Similar" %>
+                                <% elsif (@similarity > 0.6) && (@similarity <= 1.0) %>
+                                <%= "Similar" %>
+                                <% else %>
+                                <%= "Tidak masuk kategori"%>
+                              <% end %> 
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

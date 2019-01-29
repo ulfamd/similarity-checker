@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "Home", home_index_path, class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Input Document", new_first_document_path, class:"nav-item nav-link" %>
+      <%= link_to "Process", first_document_index_path, class:"nav-item nav-link active" %>
+      <%= link_to "FAQ", faq_path, class:"nav-item nav-link" %>
+      <% if current_user %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-item nav-link active" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class:"nav-item nav-link active" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,53 @@
+<%= form_for(citation_index_path, method: "post") do %>
+	<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+            	 <div class="card">
+	                <div class="card-header card-header-primary">
+	                  <h4 class="card-title">Masukkan Kutipan</h4>
+	                  <p class="card-category">Isi Form Berikut</p>
+	                </div>
+	                <div class="card-body">
+	                	<form>
+                    <div class="row-md-3">
+                      <div class="col-lg-3">
+                        <div class="form-group bmd-form-group">
+				<div>
+			        <%= label_tag :citation_id, "ID Kutipan" %>
+					<%= text_field_tag :citation_id %>
+				</div>
+				<div>
+					<%= label_tag :citation_writer__name, "Nama Penulis Kutipan" %>
+					<%= text_field_tag :citation_writer__name %>
+				</div>
+				<div>
+					<%= label_tag :citation_year, "Tahun Terbit Kutipan" %>
+					<%= text_field_tag :citation_year %>
+				</div>
+				<div>
+					<%= label_tag :citation_title, "Judul Dokumen Kutipan" %>
+					<%= text_field_tag :citation_title %>
+				</div>
+				<div>
+					<%= label_tag :citation_publisher, "Penerbit Kutipan " %>
+					<%= text_field_tag :citation_publisher %>
+				</div>
+				<div>
+					<%= label_tag :citation_sentence, "Kalimat Kutipan" %>
+					<%= text_area_tag :citation_sentence %>
+				</div>
+				<div>
+					<form>
+                    <div class="row-md-3">
+                      <div class="col-md-5">
+                        <div class="form-group bmd-form-group">
+					<%= submit_tag %>
+				</div>
+	</div>
+		</div>
+			</div>
+		</div>
+
+
+<% end %>

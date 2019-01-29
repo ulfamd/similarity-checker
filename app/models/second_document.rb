@@ -1,0 +1,2 @@
+class SecondDocument < ApplicationRecord
+end

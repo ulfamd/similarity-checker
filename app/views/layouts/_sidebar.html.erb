@@ -1,0 +1,67 @@
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+        <a href="http://" class="simple-text logo-normal">
+          Similarity Documents
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+       <%= link_to "Beranda", home_index_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+             <%= link_to "Input Teks", new_tfidf_text_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+             <li class="nav-item active  ">
+             <%= link_to "Profil", profiles_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+              <li class="nav-item active  ">
+              <%= link_to "Data Kutipan", new_citation_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              
+            </a>
+          </li>
+            <li class="nav-item active  ">
+            <%= link_to "Tabel Data Kutipan", citation_index_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+            <li class="nav-item active  ">
+            <%= link_to "Data Sumber Kutipan", new_citation_source_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+          <p></p>
+          <li class="nav-item active  ">
+       <%= link_to "Tabel Data Sumber Kutipan",citation_index_path, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+          <p></p>
+          <li class="nav-item active  ">
+       <%= link_to "Log Out",destroy_user_session_path, method: :delete, class:"nav-item nav-link" %>
+              <i class="material-icons"></i>
+              <p></p>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-1.jpg) "></div></div>
